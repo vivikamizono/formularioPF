@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Funcionários</title>
+  </head>
+  <body>
+    <h1>Funcionários</h1>
+    <ul>
+      {% for funcionario in funcionarios %}
+        <li>
+          {{ funcionario.nome_completo }} ({{ funcionario.rg }})
+          <a href="{{ url_for('update', id=funcionario.id) }}">Editar</a>
+          <a href="{{ url_for('delete', id=funcionario.id) }}">Excluir</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <a href="{{ url_for('create') }}">Criar novo funcionário</a>
+  </body>
+</html>
